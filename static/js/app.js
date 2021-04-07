@@ -24,7 +24,7 @@ function init() {
 
 init()
 
-// Function to build the charts for desired Subject ID
+// Function to build the charts for the selected Subject ID
 function buildCharts(sample) {
     d3.json("samples.json").then(function(subject) {
         var samples = subject.samples;
@@ -85,5 +85,27 @@ function buildCharts(sample) {
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
         
+    });
+}
+
+// Function to display metadata for the selected Subject ID
+function buildMetadata(sample) {
+    d3.json("samples.json").then((data) => {
+        var metadata = data.metadata;
+        console.log(metadata);
+
+        var resultsArray = metadata.filter(data => data.id == sample);
+        var result = resultsArray[0];
+        var PANEL = d3.select("#sample-metadata");
+
+        // Clear the existing data
+        PANEL.html("");
+
+        Object.entries(result).forEach(([key, value]) => {
+            PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+        });
+
+        // Bonus: Build a Gauge Chart
+        buildGauge(result.wfreq);
     });
 }
