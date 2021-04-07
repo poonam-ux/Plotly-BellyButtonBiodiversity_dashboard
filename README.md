@@ -44,4 +44,4 @@ In this assignment, you will build an interactive dashboard to explore the Belly
 
 * Update the chart whenever a new sample is selected.
 
-![]()
+![](https://github.com/poonam-ux/plotly_challenge_BellyButtonBiodiversity/blob/main/Images/gaugeChart_sm.png)
