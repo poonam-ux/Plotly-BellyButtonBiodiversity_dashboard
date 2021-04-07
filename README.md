@@ -12,7 +12,7 @@ In this assignment, you will build an interactive dashboard to explore the Belly
     * Use otu_ids as the labels for the bar chart.
     * Use otu_labels as the hovertext for the chart.
 
-![]()
+![](https://github.com/poonam-ux/plotly_challenge_BellyButtonBiodiversity/blob/main/Images/barChart_with_hovertext_sm.png)
 
 ![]()
 
