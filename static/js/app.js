@@ -109,3 +109,8 @@ function buildMetadata(sample) {
         buildGauge(result.wfreq);
     });
 }
+
+function optionChanged(newSample) {
+    buildCharts(newSample);
+    buildMetadata(newSample);
+}
