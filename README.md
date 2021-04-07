@@ -25,7 +25,7 @@ In this assignment, you will build an interactive dashboard to explore the Belly
 * Use otu_ids for the marker colors.
 * Use otu_labels for the text values.
 
-![]()
+![](https://github.com/poonam-ux/plotly_challenge_BellyButtonBiodiversity/blob/main/Images/bubbleChart_with_hovertext_sm.png)
 
 * Display the sample metadata, i.e., an individual’s demographic information.
     * Display each key-value pair from the metadata JSON object.
