@@ -11,17 +11,79 @@ function init() {
             .property("value", name);
         });
         
-        // Choose default subject ID to be plotted
+        // Choose default Subject ID to be plotted
         var firstSample = sampleNames[0];
 
         console.log(firstSample);
 
-        // Initialize page with firstsample's metadata and plots
-        buildMetadata(firstSample);
+        // Initialize page with firstsample's plots and metadata
         buildCharts(firstSample);
-        
-    
+        buildMetadata(firstSample);
     });
 }
 
 init()
+
+// Function to build the charts for desired Subject ID
+function buildCharts(sample) {
+    d3.json("samples.json").then(function(subject) {
+        var samples = subject.samples;
+        console.log(samples);
+
+        var resultsArray = samples.filter(data => data.id == sample);
+        var result = resultsArray[0];
+        console.log(result);
+
+        var otu_ids = result.otu_ids;
+        var otu_labels = result.otu_labels;
+        var sample_values = result.sample_values;
+
+        // Build a Bar Chart
+        var yticks = otu_ids.slice(0, 10).map(function(otu_id) {
+            return `OTU ${otu_id}`;
+        }).reverse();
+
+        var barTrace = {
+            x: sample_values.slice(0, 10).reverse(),
+            y: yticks,
+            text: otu_labels.slice(0, 10).reverse(),
+            type: "bar",
+            orientation: "h"
+        }
+
+        var barData = [barTrace]
+
+        var barLayout = {
+            title: "Top Bacteria Cultures Found",
+            margin: {t: 70, l: 150}
+        }
+
+        Plotly.newPlot("bar", barData, barLayout);
+
+        // Build a Bubble Chart
+        var bubbleTrace = {
+			x: otu_ids,
+			y: sample_values,
+			text: otu_labels,
+			mode: 'markers',
+			marker: {
+				color: otu_ids,
+				size: sample_values,
+                colorscale: "Earth"
+			}
+		};
+		
+		var bubbleData = [bubbleTrace];
+		
+		var bubbleLayout = {
+			title: '<b>Bubble Chart displaying sample values of OTU IDs of the selected individual<b>',
+			xaxis: { title: "OTU ID"},
+			yaxis: { title: "Sample Value"}, 
+            hovermode: "closest"
+		};
+
+        Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+
+        
+    });
+}
