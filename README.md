@@ -14,7 +14,7 @@ In this assignment, you will build an interactive dashboard to explore the Belly
 
 ![](https://github.com/poonam-ux/plotly_challenge_BellyButtonBiodiversity/blob/main/Images/barChart_with_hovertext_sm.png)
 
-![]()
+![](https://github.com/poonam-ux/plotly_challenge_BellyButtonBiodiversity/blob/main/Images/dropdownMenu_populate_sm.png)
 
 ## Bubble Chart:
 
