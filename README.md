@@ -30,7 +30,7 @@ In this assignment, you will build an interactive dashboard to explore the Belly
 * Display the sample metadata, i.e., an individual’s demographic information.
     * Display each key-value pair from the metadata JSON object.
 
-![]()
+![](https://github.com/poonam-ux/plotly_challenge_BellyButtonBiodiversity/blob/main/Images/demographicInfo_sm.png)
 
 * Update all of the plots any time that a new sample is selected.
 
