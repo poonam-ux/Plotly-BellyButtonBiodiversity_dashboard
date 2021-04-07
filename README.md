@@ -34,7 +34,7 @@ In this assignment, you will build an interactive dashboard to explore the Belly
 
 * Update all of the plots any time that a new sample is selected.
 
-![]()
+![](https://github.com/poonam-ux/plotly_challenge_BellyButtonBiodiversity/blob/main/Images/newSubjectID_selected_sm.png)
 
 ## Bonus:
 
